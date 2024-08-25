@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comsice Maejo</title>
+    <link rel="stylesheet" href="staly.css">
+    <!--Box Icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <a href="#" class="logo">
+            <i class='bx bxs-mouse-alt'></i>Computer Science
+        </a>
+    </header>
+
+    <!--Home-->
+    <section class="home swiper" id="home">
+        <!-- Swiper container -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1.png" alt="Static Image"></div>
+        </div>
+    </section>
+
+    <!-- Section for 30 images with captions -->
+    <section class="generations">
+        <h2>Generations</h2>
+        <div class="generation-list" id="generationList">
+            <!-- รูปภาพและคำอธิบายจะถูกเพิ่มที่นี่โดย JavaScript -->
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // สร้าง Swiper แต่ไม่ต้องใช้ loop หรือ autoplay
+        var swiper = new Swiper('.swiper', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // JavaScript สำหรับสร้าง 30 รูปภาพและคำอธิบาย
+                const generationList = document.getElementById('generationList');
+
+        for (let i = 1; i <= 30; i++) {
+            const generationItem = document.createElement('div');
+            generationItem.classList.add('generation-item');
+
+            const img = document.createElement('img');
+            img.src = 'images/cat1.jpg'; // ใช้รูปภาพ cat1.jpg สำหรับทุกรุ่น
+            img.alt = `Generation ${i}`;
+
+            const link = document.createElement('a');
+            link.href = 'index2.html'; // ลิงก์ไปยังหน้า index2.html สำหรับทุกรุ่น
+            link.textContent = `รุ่น ${i}`;
+
+            generationItem.appendChild(img);
+            generationItem.appendChild(link);
+            generationList.appendChild(generationItem);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation 29</title>
+    <link rel="stylesheet" href="staly2.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Computer Science</a>
+    </header>
+
+    <!-- Generation Details -->
+    <section class="generation-details">
+        <h2>รุ่นที่ 29</h2>
+        <p>จำนวนสมาชิก: 108 คน</p>
+        
+        <div id="memberList" class="member-list">
+            <!-- รายชื่อสมาชิกและรูปภาพจะถูกเพิ่มที่นี่โดย JavaScript -->
+        </div>
+    </section>
+
+    <!-- Custom JS -->
+    <script>
+        // JavaScript สำหรับเพิ่มชื่อสมาชิก, รหัสนักศึกษา และรูปภาพ
+        const memberList = document.getElementById('memberList');
+
+        for (let i = 1; i <= 108; i++) {
+            const memberItem = document.createElement('div');
+            memberItem.classList.add('member-item');
+
+            // สร้างลิงก์สำหรับแต่ละสมาชิก
+            const link = document.createElement('a');
+            link.href = 'index3.html'; // เปลี่ยนลิงก์ทั้งหมดเป็น index3.html
+
+            const img = document.createElement('img');
+            const idNumber = 6604101300 + i; // รหัสนักศึกษาเริ่มที่ 6604101301
+            img.src = idNumber === 6604101407 ? 'images/12345.jpg' : 'images/cat1.jpg'; // ใช้รูปภาพเฉพาะสำหรับรหัสนักศึกษา 6604101407
+            img.alt = `Member ${i}`;
+            img.classList.add('member-image');
+
+            // เพิ่มรูปภาพไปยังลิงก์
+            link.appendChild(img);
+
+            const name = document.createElement('p');
+            name.textContent = `รหัสนักศึกษา: ${idNumber}`;
+
+            memberItem.appendChild(link); // เพิ่มลิงก์ไปยัง memberItem
+            memberItem.appendChild(name);
+            memberList.appendChild(memberItem);
+        }
+    </script>
+</body>
+</html>
